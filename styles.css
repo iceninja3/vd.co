@@ -49,13 +49,24 @@ body {
  a{
     /*color: rgb(230, 14, 108);*/
     color: white;
-    text-decoration-thickness: 1px;
+    color: #1E90FF;
+    /* color: #666666; */
+    text-decoration: underline; /* Ensure the text is underlined */
+    text-decoration-thickness: 1px; /* Adjust the thickness of the underline */
+    text-underline-offset: 4px; /* Adjust the gap between the text and the underline */
+    transition: color 0.3s; /* Optional: smooth color transition on hover */
 
 } 
 
-a:hover{
-    color: #666666;
+a:visited {
+    color: #8A2BE2;
 }
+
+a:hover{
+    color: rgb(230, 14, 108);
+    color: #FFA500;
+}
+
 
 #socials{
     color: rgb(230, 14, 108);
@@ -72,6 +83,28 @@ a:hover{
 i{
 font-size: 2em;
 }
+
+
+
+/* 
+.thoughts{
+    background-color: #1E90FF; 
+}
+
+.projectwriteup{
+    background-color: #32CD32; 
+}
+
+.media{
+    background-color: #FFA500; 
+}
+
+.productreccs{
+    background-color: #8A2BE2; 
+}  
+*/
+
+
 
 
 /* footer {
