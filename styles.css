@@ -118,4 +118,147 @@ font-size: 2em;
     height: 12.5%;
   } */
 
+
+/* Layout Utilities */
+body.blog-body {
+    position: static;
+    transform: none;
+    max-width: 900px; /* Max width for the entire content container */
+    margin: 80px auto; /* Center the container on the page */
+    padding: 0 20px;
+}
+
+.blog-container {
+    display: grid;
+    grid-template-columns: 220px 1fr; /* Sidebar width fixed, content takes rest */
+    gap: 60px;
+    align-items: start;
+}
+
+/* Sidebar Styles */
+.sidebar {
+    position: sticky;
+    top: 40px;
+}
+
+.sidebar-avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.sidebar-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Ensure image fits */
+    background-color: #eee; /* Placeholder bg */
+}
+
+.sidebar-bio h3 {
+    font-size: 1.1em;
+    margin: 0 0 10px 0;
+    color: white;
+}
+
+.sidebar-bio p {
+    font-size: 0.9em;
+    color: #b0b0b0;
+    margin-bottom: 20px;
+    line-height: 1.4;
+}
+
+.sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 30px;
+}
+
+.sidebar-nav a {
+    text-decoration: none;
+    color: #888;
+    font-weight: 500;
+    font-size: 0.95em;
+    transition: color 0.2s;
+}
+
+.sidebar-nav a:hover, .sidebar-nav a.active {
+    color: white;
+}
+
+
+.sidebar-socials {
+    margin-top: 20px;
+    display: flex;
+    gap: 15px;
+}
+
+.sidebar-socials a {
+    text-decoration: none;
+    color: #888;
+}
+.sidebar-socials a:hover {
+    color: #1E90FF;
+}
+
+.sidebar-socials i {
+    font-size: 1.2em;
+}
+
+/* Blog Content Styles */
+.blog-content section {
+    margin-bottom: 60px;
+}
+
+.post-item {
+    margin-bottom: 40px;
+}
+
+.post-meta {
+    font-size: 0.8em;
+    text-transform: uppercase;
+    color: #666;
+    margin-bottom: 8px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+}
+
+.post-title {
+    display: block;
+    font-size: 1.8em;
+    font-weight: 700;
+    color: white; /* Title color */
+    text-decoration: none;
+    margin-bottom: 12px;
+    line-height: 1.2;
+}
+
+.post-title:hover {
+    text-decoration: none; /* No underline on hover for title, maybe color shift? */
+    color: #e0e0e0;
+}
+
+.post-summary {
+    color: #b0b0b0;
+    font-size: 1em;
+    line-height: 1.6;
+    margin: 0;
+}
+
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .blog-container {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    
+    .sidebar {
+        position: static;
+        text-align: left; /* Or center if preferred */
+    }
+}
+
   

@@ -1,30 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Thoughts</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
-<body class="center">
-    <header>
-        <h1>Thoughts</h1>
-        <h3>Somewhat random ramblings about somewhat random things!</h3>
-    </header>
-    <main>
-        <section>
-            <ul class="thoughts"> <a href="Thoughts/camus.html">Camus</a> – 2.2.25</ul> 
-            <ul class = "projectwriteup"> Engr 1IT Final Project </ul>
-            <ul class = "projectwriteup"> Personal Website </ul>
-            <ul class = "media">Wicked</ul>
-            <ul class = "productreccs"> Spicetify </ul>
-            <ul class = "random"></ul>
-            <p>More Coming Soon</p>
-        </section>
-    </main>
-    <!-- <footer>
-        <p>&copy; 2025 Vishal Dandamudi. All rights reserved.</p>
-    </footer> -->
+
+<body class="blog-body">
+
+    <div class="blog-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-avatar">
+                <!-- Using a placeholder or the favicon if no image is available -->
+                <!-- If user has a specific avatar image, we should use that. For now, I'll use a placeholder/icon or text avatar -->
+                <!-- Assuming there might be a profile pic, but I'll use a generic one or none if not found. 
+                      Checked file list: favicon.ico exists. Maybe use that or just the name. -->
+                <img src="favicon.ico" alt="Vishal Dandamudi">
+            </div>
+
+            <div class="sidebar-bio">
+                <h3>Vishal Dandamudi</h3>
+                <p>UCLA Computer Engineering student. Interested in software, design, and random ramblings.</p>
+
+                <div class="sidebar-socials">
+                    <a href="mailto:dandamudivishal26@gmail.com"><i class="fa-regular fa-envelope"></i></a>
+                    <a href="https://github.com/iceninja3" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/vishaldandamudi/" target="_blank"><i
+                            class="fa-brands fa-linkedin"></i></a>
+                </div>
+            </div>
+
+            <nav class="sidebar-nav">
+                <a href="thoughts.html" class="active">Articles</a>
+                <a href="list.html">Favorite Media</a>
+                <a href="index.html">Home</a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="blog-content">
+
+            <!-- Example Post 1 -->
+            <article class="post-item">
+                <div class="post-meta">Feb 2, 2025 • 5 min read</div>
+                <a href="Thoughts/camus.html" class="post-title">Camus</a>
+                <p class="post-summary">
+                    Thoughts on Albert Camus and the Absurd. Exploring the philosophy of existentialism through the lens
+                    of modern student life.
+                </p>
+            </article>
+
+            <!-- Example Post 2 (Project Writeup) -->
+            <article class="post-item">
+                <div class="post-meta">Jan 15, 2025 • Project</div>
+                <a href="#" class="post-title">Engr 1IT Final Project</a>
+                <p class="post-summary">
+                    A deep dive into our final project for Engineering 1IT. Dealing with microcontrollers, sensors, and
+                    a lot of debugging.
+                </p>
+            </article>
+
+            <!-- Example Post 3 (Personal Website) -->
+            <article class="post-item">
+                <div class="post-meta">Dec 2024 • Project</div>
+                <a href="#" class="post-title">Building this Website</a>
+                <p class="post-summary">
+                    Why I decided to build a personal website from scratch using vanilla HTML/CSS and what I learned
+                    along the way.
+                </p>
+            </article>
+
+            <!-- Example Post 4 (Media) -->
+            <article class="post-item">
+                <div class="post-meta">Nov 2024 • Media</div>
+                <a href="#" class="post-title">Wicked</a>
+                <p class="post-summary">
+                    Review and thoughts on the musical/movie Wicked.
+                </p>
+            </article>
+
+            <!-- Example Post 5 (Product) -->
+            <article class="post-item">
+                <div class="post-meta">Oct 2024 • Recommendation</div>
+                <a href="#" class="post-title">Spicetify</a>
+                <p class="post-summary">
+                    Customizing Spotify client with Spicetify. A must-have tool for power users.
+                </p>
+            </article>
+
+
+        </main>
+    </div>
+
 </body>
+
 </html>
