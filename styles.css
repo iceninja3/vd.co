@@ -46,25 +46,61 @@ body {
 
 
 
- a{
-    /*color: rgb(230, 14, 108);*/
-    color: white;
-    color: #1E90FF;
-    /* color: #666666; */
-    text-decoration: underline; /* Ensure the text is underlined */
-    text-decoration-thickness: 1px; /* Adjust the thickness of the underline */
-    text-underline-offset: 4px; /* Adjust the gap between the text and the underline */
-    transition: color 0.3s; /* Optional: smooth color transition on hover */
-
-} 
-
-a:visited {
-    color: #8A2BE2;
+ul {
+    list-style-type: none;
+    padding-left: 0;
 }
 
-a:hover{
-    color: rgb(230, 14, 108);
-    color: #FFA500;
+a {
+    /* color: white; */
+    color: rgba(255, 255, 255, 0.571);
+    text-decoration: none;
+    background-image: linear-gradient(currentColor, currentColor);
+    background-position: 0% 100%;
+    background-repeat: no-repeat;
+    background-size: 0% 2px; /* 2px underline height */
+    transition: background-size 0.3s;
+}
+
+a:visited {
+    color: white;
+}
+
+a:hover {
+    background-size: 100% 2px;
+    color: white;
+    cursor: pointer;
+}
+
+
+/* Accordion Styles */
+.accordion {
+  background-color: transparent;
+  color: white;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 1.5em; /* Match h2 roughly or customize */
+  transition: 0.4s;
+  font-family: inherit;
+  font-weight: bold;
+  border-bottom: 1px solid #333; /* subtle separator */
+}
+
+/* Add a hover effect */
+.accordion:hover {
+   color: #ccc; 
+}
+
+/* Panel to hide/show */
+.panel {
+  padding: 0 18px;
+  display: none;
+  background-color: transparent;
+  overflow: hidden;
 }
 
 
