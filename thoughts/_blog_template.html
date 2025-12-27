@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- copying castel's blog just to have a template for how a general blog should look like -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Post - Vishal Dandamudi</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    <!-- Include Marked.js for Markdown rendering -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+    <style>
+        /* Additional inline overrides if needed specific to this page can go here, 
+            but most should be in styles.css */
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation / Header -->
+    <div style="position: absolute; top: 20px; left: 20px;">
+        <a href="../thoughts.html" style="font-size: 14px; text-decoration: none;">&larr; Back to Home</a>
+    </div>
+
+    <div class="blog-layout">
+        <!-- Sidebar -->
+        <aside class="blog-sidebar">
+            <h3>Table of Contents</h3>
+            <ul id="toc" class="toc-list">
+                <!-- TOC will be generated here -->
+            </ul>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="blog-content" id="content">
+            <!-- Rendered Markdown will be injected here -->
+        </main>
+    </div>
+
+    <footer
+        style="position: fixed; bottom: 20px; left: 0; width: 100%; text-align: center; font-size: 12px; color: rgba(255, 255, 255, 0.5); background-color: #131415; padding: 10px 0;">
+        &copy; <span id="year"></span> Vishal Dandamudi
+    </footer>
+
+    <!-- 
+      WRITE YOUR BLOG POST CONTENT HERE INSIDE THE SCRIPT TAG.
+      Use standard Markdown syntax.
+    -->
+    <script id="markdown-content" type="text/markdown">
+# Title of Blog Post
+
+Brief Intro/synopsis as to what the post is about
+
+## The Challenge
+Doing pure mathematics research is quite unlike other scientific research. I don't run experiments, nor do I have data to crunch through.
+
+## My Setup
+My research workflow is hybrid: it consists of both (digital) handwritten notes and typed LaTeX notes.
+
+![My Custom Setup](../henry.png)
+
+### Tools
+- **Hardware**: Wacom Tablet
+- **Software**: Xournal, LaTeX
+
+## Latex Integration
+This LaTeX document automatically concatenates the notes of the previous 14 days.
+
+## Conclusion
+Digital notes have quite a few advantages.
+    </script>
+
+    <script>
+        // 1. Set Year
+        document.getElementById("year").textContent = new Date().getFullYear();
+
+        // 2. Render Markdown
+        const markdownInput = document.getElementById('markdown-content').textContent;
+        const contentDiv = document.getElementById('content');
+
+        // Use marked.js to parse content
+        contentDiv.innerHTML = marked.parse(markdownInput);
+
+        // 3. Generate Table of Contents
+        const tocList = document.getElementById('toc');
+        const headers = contentDiv.querySelectorAll('h1, h2, h3');
+
+        headers.forEach((header, index) => {
+            // Create ID for the header if it doesn't have one
+            const id = 'section-' + index;
+            header.id = id;
+
+            // Create Link
+            const li = document.createElement('li');
+            const a = document.createElement('a');
+            a.href = '#' + id;
+            a.textContent = header.textContent;
+
+            // Indent based on header level
+            if (header.tagName === 'H3') {
+                li.style.marginLeft = "15px";
+                a.style.fontSize = "0.85em";
+            }
+
+            li.appendChild(a);
+            tocList.appendChild(li);
+        });
+    </script>
+</body>
+
+</html>
