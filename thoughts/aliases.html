@@ -50,59 +50,93 @@
       Use standard Markdown syntax.
     -->
     <script id="markdown-content" type="text/markdown">
+
 # Aliases (zsh)
-Note: Ignore everything other thn "The Steps" section if you just want to set up the alias. The other stuff is just context.
+
+Note: Ignore everything other than "The Steps" section if you just want to set up the alias. The other stuff is just context.
+
+  
 
 Aliases are pretty simple, just a shortcut for a command. If you have an alias called "gp" corresponding to "git pull", when you use "gp" in the terminal, it will run "git pull".
 
+  
+
 ## The Steps
-1. Open your terminal <br>
-    1a) If you're not familiar with Terminal just do Cmd+Space on Mac to access Spotlight and type Terminal in
-2. Enter the ```nano ~/.zshrc``` command
+
+1. Open your terminal. If you're not familiar with Terminal just do Cmd+Space on Mac to access Spotlight and type Terminal in.
+
+2. Enter the ```nano ~/.zshrc``` command.
+
 3. Add your alias to the file <br>
-    3a) Add the alias at the bottom of the .zshrc file so you can easily modify it and find all your aliases later should you need to <br>
-    3b) Add a like like ```alias d='cd ~/Desktop' ```. You need the single quotes. The command you want to replace goes in the single quotes. Your alias/nickname for the command goes on the left side of the equals sign.
-4. Save and exit <br>
-    4a) You can follow the instructions in the nano editor to save your changes and exit <br>
-    4b) If the nano instructions are unclear basically all you have to do is press ```ctrl+x```, enter to save changes, and you should be out.
-5. Type "source ~/.zshrc" to apply the changes and test your alias out <br>
-        5a) You can also just close the terminal and reopen to "reset" which is all the source command is doing
+3a) Add the alias at the bottom of the .zshrc file so you can easily modify it and find all your aliases later should you need to <br>
+3b) Add a line like ```alias d='cd ~/Desktop' ```. You need the single quotes. The command you want to replace goes in the single quotes. Your alias/nickname for the command goes on the left side of the equals sign.
+
+4. Save and exit. You can follow the instructions in the nano editor to save your changes and exit. If the nano instructions are unclear basically all you have to do is press ```Ctrl+x```, enter to save changes, and you should exit nano.
+
+5. Type "source ~/.zshrc" to apply the changes and test your alias out. You can also just close the terminal and reopen to "reset" which is all the source command is doing.
+
 ## Some Aliases I Use
 
+  
+
 ### Navigation
-One really convenient way to use aliases is to avoid repetitive cding/lsing into directories. For example, if you regularly work in some directory with the path /Users/vishal/Desktop/vd.co/assets instead of doing cd Desktop/vd.co/assets or each cd invidually you can just set an alias like "vass".
+
+One really convenient way to use aliases is to avoid repetitive cding/lsing into directories. For example, if you regularly work in some directory with the path /Users/vishal/Desktop/vd.co/assets instead of doing cd Desktop/vd.co/assets or each cd individually you can just set an alias like "vass".
+
+  
 
 I put most folders on my Desktop for easy access so one natural alias is simply ```d``` for ```cd ~/Desktop```. I've also worked a decent amount in a folder for a club recently with the path name ```/Users/vishal/Desktop/SMV/SMV_Boards_2026``` and I use the alias ```smvb``` for it.
 
+  
+  
 
 ### Git
+
 ``` gp``` for ``` git pull``` <br>
+
 ``` gpu``` for ``` git push```
 
-This one below is more advanced and not with zshrc exactly (it's a global alias for git which you configure with git rather than your shell) but the end result is the same. This alias simplifies the git add/commit process. 
+  
+
+This one below is more advanced and not with zshrc exactly (it's a global alias for git which you configure with git rather than your shell) but the end result is the same. This alias simplifies the git add/commit process.
+
 Run this command: <br>
+
 ```git config --global alias.ac '!f() { git add . && git commit -m "$*"; }; f' ```
+
+  
 
 You will then be able to use just ```git ac "insert message inside quotes"``` to add and commit in one step. Note that this adds all changes. If you want to selectively add changes for some reason, do it the "long" way.
 
+  
+  
+  
 
+## Additional Notes
 
-## Additonal Notes
-This section is to just provide some notes for concepts related to the post for further reading and to better understand what's happening under the hood. 
+This section is to just provide some notes for concepts related to the post for further reading and to better understand what's happening under the hood.
+
+  
 
 ### What is zsh? What is a shell?
-zsh is a shell. You can think of it as the layer between you and the operating system (in this case, MacOS). What it is doesn't matter too much (although here is some [additional reading](https://superuser.com/questions/144666/what-is-the-difference-between-shell-console-and-terminal) if helpful). I think it's fine to just think of it as "the Terminal".
+
+zsh is a shell. You can think of it as the layer between you and the operating system (in this case, macOS). What it is doesn't matter too much (although here is some [additional reading](https://superuser.com/questions/144666/what-is-the-difference-between-shell-console-and-terminal) if helpful). I think it's fine to just think of it as "the Terminal".
+
+  
 
 ### Breaking down the syntax of some commands
+
 So that you don't feel completely lost!
 
-#### nano ~/.zshrc
-This command is just opening the .zshrc file in the nano editor. If your VSCode is set up properly, you could potentially edit this file in VSCode (or some other editor) by doing ```code ~/.zshrc```. The first word nano specifies that we are using the nano editor which is a very simple/lightweight editor great for quick changes.
-<br> <br>
-The ```~``` (called a tilde) helps specify where the .zshrc file is. It specifies specifucally the user's home directory (basically everything at the depth of /User/username/)
-<br> <br>
-The .zshrc file is your profile file for zsh. It's basically all the custom information the zsh shell has for your specifically (basically all the customizations/tweaks you've done to zsh). One thing to note is that because the "." is at the front, this is actually a hidden file. When you run the standard ```ls``` or go to the root directory with Finder/some visual GUI, you won't see .zshrc. You can do ```ls -a``` if you really want to see it though.
+  
 
+#### nano ~/.zshrc
+
+This command is just opening the .zshrc file in the nano editor. If your VSCode is set up properly, you could potentially edit this file in VSCode (or some other editor) by doing ```code ~/.zshrc```. The first word nano specifies that we are using the nano editor which is a very simple/lightweight editor great for quick changes.
+
+The ```~``` (called a tilde) helps specify where the .zshrc file is. It specifies specifically the user's home directory (basically everything at the depth of /Users/username/)
+
+The .zshrc file is your profile file for zsh. It's basically all the custom information the zsh shell has for you specifically (basically all the customizations/tweaks you've done to zsh). One thing to note is that because the "." is at the front, this is actually a hidden file. When you run the standard ```ls``` or go to the root directory with Finder/some visual GUI, you won't see .zshrc. You can do ```ls -a``` if you really want to see it though.
 
     </script>
 
